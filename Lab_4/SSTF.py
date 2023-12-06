@@ -16,13 +16,14 @@ def find_closest_request(head, requests):
 
 
 def sstf(head, requests):
+    requests_copy = requests[:]
     total_head_movement = 0
 
-    while len(requests) > 0:
-        distance, request = find_closest_request(head, requests)
+    while len(requests_copy) > 0:
+        distance, request = find_closest_request(head, requests_copy)
         total_head_movement += distance
         head = request
-        requests.remove(request)
+        requests_copy.remove(request)
 
     print("SSTF: ", total_head_movement)
 
