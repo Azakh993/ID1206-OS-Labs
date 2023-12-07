@@ -21,13 +21,13 @@ def switch_direction(direction):
 
 
 def scan(head, requests):
-    requests_copy = requests[:]
+    queue = requests[:]
 
     total_head_movement = 0
     direction = 'L'
 
-    while requests_copy:
-        distance, request = find_closest_request(head, requests_copy, direction)
+    while queue:
+        distance, request = find_closest_request(head, queue, direction)
 
         if request is None:
             if direction == 'L':
@@ -41,6 +41,6 @@ def scan(head, requests):
         else:
             total_head_movement += distance
             head = request
-            requests_copy.remove(request)
+            queue.remove(request)
 
     print("SCAN: ", total_head_movement)

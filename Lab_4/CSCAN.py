@@ -17,12 +17,12 @@ def find_closest_request(head, requests):
 
 
 def cscan(head, requests, upper_bound):
-    requests_2 = requests[:]
+    queue = requests[:]
 
     total_head_movement = 0
 
-    while requests_2:
-        distance, request = find_closest_request(head, requests_2)
+    while queue:
+        distance, request = find_closest_request(head, queue)
 
         if request is None:
             total_head_movement += abs(head - upper_bound) + upper_bound
@@ -30,6 +30,6 @@ def cscan(head, requests, upper_bound):
         else:
             total_head_movement += distance
             head = request
-            requests_2.remove(request)
+            queue.remove(request)
 
     print("C-SCAN: ", total_head_movement)
