@@ -32,4 +32,4 @@ def clook(head, requests):
             head = request
             queue.remove(request)
 
-    print("C-SCAN: ", total_head_movement)
+    print("C-LOOK: ", total_head_movement)
