@@ -20,7 +20,7 @@ def switch_direction(direction):
     return 'R' if direction == 'L' else 'L'
 
 
-def scan(head, requests):
+def scan(head, requests, upper_bound):
     queue = requests[:]
 
     total_head_movement = 0
@@ -34,8 +34,8 @@ def scan(head, requests):
                 total_head_movement += head
                 head = 0
             else:
-                total_head_movement += 199 - head
-                head = 199
+                total_head_movement += upper_bound - head
+                head = upper_bound
 
             direction = switch_direction(direction)
         else:
