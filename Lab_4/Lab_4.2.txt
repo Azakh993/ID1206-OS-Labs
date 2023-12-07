@@ -1,0 +1,26 @@
+What are the inode values of file1.txt and file2.txt?
+- 3145821
+
+Are they the [inode values] same or different?
+- They are the same
+
+Do the two files have the same or different contents?
+- The have the same content
+
+Next, edit file2.txt and change its contents. Are the contents of file1.txt and file2.txt the same or different?
+- They have the same content
+
+Next, remove file1.txt. Does file2.txt still exist as well?
+- Yes, it still exists
+
+The strace command traces the execution of system calls as the command 'rm file2.txt' is run. What system call is used for removing file2.txt?
+- /usr/bin/rm
+
+In the source code available with this text, create a soft link to file3.txt. Are the inodes the same, or is each unique? 
+- They are unique
+
+Next, edit the contents of file4.txt. Have the contents of file3.txt been altered as well?
+- Yes
+
+Last, delete file3.txt. After you have done so, explain what happens when you attempt to edit file4.txt.
+- It is not possible to edit; the soft link becomes "dangling / broken".
