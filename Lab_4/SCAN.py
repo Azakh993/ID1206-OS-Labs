@@ -36,14 +36,11 @@ def scan(head, requests):
             else:
                 total_head_movement += 199 - head
                 head = 199
-            print(head)
 
             direction = switch_direction(direction)
         else:
             total_head_movement += distance
             head = request
-            print(head)
             requests_copy.remove(request)
-
 
     print("SCAN: ", total_head_movement)
