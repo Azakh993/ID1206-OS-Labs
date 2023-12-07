@@ -21,12 +21,18 @@ def cscan(head, requests, upper_bound):
 
     total_head_movement = 0
 
-    while queue:
+    while len(queue) >= 0:
         distance, request = find_closest_request(head, queue)
 
         if request is None:
-            total_head_movement += abs(head - upper_bound) + upper_bound
-            head = 0
+            if head == upper_bound:
+                total_head_movement += upper_bound
+                head = 0
+            elif head == 0:
+                break
+            else:
+                total_head_movement += abs(head - upper_bound)
+                head = upper_bound
         else:
             total_head_movement += distance
             head = request
